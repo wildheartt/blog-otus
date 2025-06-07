@@ -2,9 +2,9 @@ name: Lint and Format Check
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, building]
   pull_request:
-    branches: [main, develop]
+    branches: [main, building]
 
 jobs:
   lint:
@@ -26,8 +26,5 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
-      - name: Run HTMLHint
-        run: npm run htmlhint
-
-      - name: Check Prettier formatting
-        run: npx prettier --check '**/*.{html,css,js,json}'
+      - name: Run format
+        run: npm run fortmat

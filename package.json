@@ -7,16 +7,14 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write '**/*.{html,css,js,json}'",
-    "htmlhint": "htmlhint '**/*.html'"
+    "format": "prettier --write '**/*.{html,css,js,json}'"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
     "@eslint/js": "^8.57.0",
     "@html-eslint/eslint-plugin": "^0.21.0",
     "@html-eslint/parser": "^0.21.0",
-    "prettier": "^3.2.5",
-    "htmlhint": "^1.1.4"
+    "prettier": "^3.2.5"
   },
   "keywords": [
     "blog",

@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Онлайн чат для общения с другими пользователями в реальном времени"
+    />
+    <title>Онлайн чат - Блог разработчика</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="index.html" class="site-logo">DevBlog</a>
+        <nav class="site-nav">
+          <ul>
+            <li>
+              <a href="index.html">Главная</a>
+            </li>
+            <li>
+              <a href="chat.html" class="active">Чат</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="container">
+        <h1>Онлайн чат</h1>
+
+        <section class="chat-container">
+          <header class="chat-header">
+            <h2>Общий чат</h2>
+            <p>Участников онлайн: <span id="online-count">3</span></p>
+          </header>
+
+          <section
+            class="chat-messages"
+            id="chat-messages"
+            role="log"
+            aria-live="polite"
+            aria-label="Сообщения чата"
+          >
+            <article class="message">
+              <header class="message-header">
+                <span class="message-author">Алексей</span>
+                <time class="message-time" datetime="2024-01-15T14:30:00"
+                  >14:30</time
+                >
+              </header>
+              <div class="message-text">
+                Привет всем! Как дела с изучением семантической верстки?
+              </div>
+            </article>
+
+            <article class="message">
+              <header class="message-header">
+                <span class="message-author">Мария</span>
+                <time class="message-time" datetime="2024-01-15T14:32:00"
+                  >14:32</time
+                >
+              </header>
+              <div class="message-text">
+                Отлично! Только что прочитала статью про HTML5 элементы. Очень
+                полезно!
+              </div>
+            </article>
+
+            <article class="message">
+              <header class="message-header">
+                <span class="message-author">Дмитрий</span>
+                <time class="message-time" datetime="2024-01-15T14:35:00"
+                  >14:35</time
+                >
+              </header>
+              <div class="message-text">
+                А я вот пытаюсь разобраться с CSS Grid. Кто-нибудь может помочь
+                с примерами?
+              </div>
+            </article>
+
+            <article class="message">
+              <header class="message-header">
+                <span class="message-author">Алексей</span>
+                <time class="message-time" datetime="2024-01-15T14:36:00"
+                  >14:36</time
+                >
+              </header>
+              <div class="message-text">
+                @Дмитрий, рекомендую начать с простых примеров. Grid отлично
+                подходит для двумерных макетов.
+              </div>
+            </article>
+
+            <article class="message">
+              <header class="message-header">
+                <span class="message-author">Мария</span>
+                <time class="message-time" datetime="2024-01-15T14:38:00"
+                  >14:38</time
+                >
+              </header>
+              <div class="message-text">
+                Согласна! А для одномерных лучше использовать Flexbox. У меня
+                есть хорошая шпаргалка, могу поделиться.
+              </div>
+            </article>
+
+            <article class="message">
+              <header class="message-header">
+                <span class="message-author">Анна</span>
+                <time class="message-time" datetime="2024-01-15T14:40:00"
+                  >14:40</time
+                >
+              </header>
+              <div class="message-text">
+                Присоединяюсь к обсуждению! Кстати, кто-нибудь использует
+                препроцессоры CSS?
+              </div>
+            </article>
+
+            <article class="message">
+              <header class="message-header">
+                <span class="message-author">Дмитрий</span>
+                <time class="message-time" datetime="2024-01-15T14:42:00"
+                  >14:42</time
+                >
+              </header>
+              <div class="message-text">
+                @Мария, буду очень благодарен за шпаргалку! @Анна, я работаю с
+                SCSS, очень удобно.
+              </div>
+            </article>
+          </section>
+
+          <section class="chat-form">
+            <h3 class="visually-hidden">Отправка сообщения</h3>
+            <form
+              id="message-form"
+              role="form"
+              aria-label="Форма отправки сообщения"
+            >
+              <div class="form-group">
+                <label for="user-name">Ваше имя:</label>
+                <input
+                  type="text"
+                  id="user-name"
+                  name="userName"
+                  class="form-control"
+                  placeholder="Введите ваше имя"
+                  required
+                  maxlength="50"
+                  aria-describedby="name-help"
+                />
+                <small id="name-help" class="form-text">
+                  Имя будет отображаться в чате
+                </small>
+              </div>
+
+              <div class="form-group">
+                <label for="message-text">Сообщение:</label>
+                <textarea
+                  id="message-text"
+                  name="messageText"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Введите ваше сообщение..."
+                  required
+                  maxlength="500"
+                  aria-describedby="message-help"
+                ></textarea>
+                <small id="message-help" class="form-text">
+                  Максимум 500 символов
+                </small>
+              </div>
+
+              <div class="form-group">
+                <button
+                  type="submit"
+                  class="btn btn-block"
+                  id="send-button"
+                  aria-describedby="send-help"
+                >
+                  Отправить сообщение
+                </button>
+                <small id="send-help" class="form-text">
+                  Нажмите Ctrl+Enter для быстрой отправки
+                </small>
+              </div>
+            </form>
+          </section>
+        </section>
+
+        <aside class="chat-info">
+          <h3>Правила чата</h3>
+          <ul>
+            <li>Будьте вежливы и уважительны к другим участникам</li>
+            <li>Не используйте нецензурную лексику</li>
+            <li>Обсуждайте темы, связанные с веб-разработкой</li>
+            <li>Помогайте новичкам и делитесь знаниями</li>
+            <li>Не размещайте спам или рекламу</li>
+          </ul>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2024 Блог разработчика. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <style>
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .form-text {
+        font-size: 0.875rem;
+        color: #666;
+        margin-top: 0.25rem;
+      }
+
+      .chat-info {
+        margin-top: 2rem;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .chat-info h3 {
+        margin-bottom: 1rem;
+        color: #2c3e50;
+      }
+
+      .chat-info ul {
+        padding-left: 1.5rem;
+      }
+
+      .chat-info li {
+        margin-bottom: 0.5rem;
+        color: #666;
+      }
+
+      .message-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </body>
+</html>

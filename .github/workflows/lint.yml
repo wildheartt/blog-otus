@@ -27,4 +27,4 @@ jobs:
         run: npm run lint
 
       - name: Run format
-        run: npm run fortmat
+        run: npm run format

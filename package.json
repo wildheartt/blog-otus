@@ -1,0 +1,27 @@
+{
+  "name": "blog-otus",
+  "version": "1.0.0",
+  "description": "Блог сайт с семантической разметкой",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write '**/*.{html,css,js,json}'"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "@eslint/js": "^8.57.0",
+    "@html-eslint/eslint-plugin": "^0.21.0",
+    "@html-eslint/parser": "^0.21.0",
+    "prettier": "^3.2.5"
+  },
+  "keywords": [
+    "blog",
+    "html",
+    "css",
+    "semantic"
+  ],
+  "author": "",
+  "license": "MIT"
+}
